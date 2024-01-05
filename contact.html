@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+	<link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fccde9d8d8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+            <nav id="navbar">
+                <img src="imgae/logo.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#"class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <section class="contimg">
+                <div>
+                <img src="imgae/cont.jpeg">
+            </div>
+    </section>
+    <section class="abo">
+        <div class="conta">
+            <div class="item">
+                <div class="contact">
+                    <div class="first-text">Let's get in touch</div>
+                    <img src="imgae/contus.png" alt="" class="image">
+                    <h1 class="sub-title">Contact Us</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>InnovetSoftwareSolutions@consultant.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>+91 8977588675</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/shaikaslam413?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/shaik-aslam-b75366240/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="submit-form">
+                    <p><i class="#"></i>Opening Time</p>
+                    <p><i class="#"></i>Mon – Fri : 9 am – 6 pm</p>
+                 <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="your Name" required>
+                    <input type="text" name="Phone Number" placeholder="Your Number" required>
+                    <input type="email" name="Email"  placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <span id="msg"></span>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+ <script>
+  const scriptURL = 
+  'https://script.google.com/macros/s/AKfycbzJJVvN6e_S-67RAOEUxqiRdQ3lJCtmKSHzgIC3ENR3yfIDjiMuOGvAd84-jPJqxUcP/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message Sent Successfully"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },1)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+   
+ </section>
+ <section class="banner">
+        <div class="ban">
+            <h2>Innovet Software Solutions</h2>
+            <h5>@Innovet Software Solutions All Rights Are Reserved 2024</h5>
+        </div>
+    </section>
+</body>
+</html>
